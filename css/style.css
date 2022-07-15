@@ -24,7 +24,6 @@ body main {
   width: 100%;
   height: 100%;
   position: relative;
-  border: 1px solid red;
 }
 body main h1 {
   position: absolute;
@@ -87,9 +86,9 @@ body main .btnUP p {
   position: absolute;
   top: 100%;
   left: 50%;
-  transition: translateX(-50%);
+  transform: translateX(-50%);
   opacity: 0;
-  transition: 0.5s;
+  transition: 0.5s 0.4s;
 }
 body main .btnUP:hover::before {
   transform: rotate(45deg) translateY(-40px);
@@ -170,6 +169,52 @@ body main .btnDown:hover span {
 body main .btnDown:hover p {
   top: 50%;
   opacity: 1;
+}
+body main .panel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body main .panel li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  perspective: 400px;
+}
+body main .panel li .bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  transition: 0.8s;
+}
+body main .panel li:nth-of-type(1) .bg {
+  background: rgb(192, 246, 253);
+}
+body main .panel li:nth-of-type(2) .bg {
+  background: rgb(186, 255, 213);
+}
+body main .panel li:nth-of-type(3) .bg {
+  background: rgb(240, 255, 200);
+}
+body main .panel li:nth-of-type(4) .bg {
+  background: rgb(255, 209, 251);
+}
+body main .panel li.on .bg {
+  opacity: 1;
+  transform: translaleY(0%) rotateX(0deg);
+}
+body main .panel li.up .bg {
+  opacity: 0;
+  transform: translateY(-80%) rotateX(50deg);
+}
+body main .panel li.down .bg {
+  opacity: 0;
+  transform: translateY(80%) rotateX(-50deg);
 }
 
 /*# sourceMappingURL=style.css.map */
